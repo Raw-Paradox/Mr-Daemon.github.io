@@ -27,6 +27,7 @@ projects:
     forks: true
     projects:
       - MusicPlayer
+      - Mr-Daemon.github.io
     # - repo-name
 
 social_media:
