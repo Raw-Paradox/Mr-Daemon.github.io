@@ -12,7 +12,7 @@ That quite confused me at first, though I am a newbee at python but I already ha
 
 ## __Name__ guard
 As a stackoverflow-oriented programmer, I quickly find result in stackoverflow~~~
-### variable __name__
+### variable `__name__`
 When you execute your python program, the interpreter will define some special variables. `__name__` is one of them.  
 * If your module is executed as main program, the interpreter will define `__name__` with the hard-coded string `"__main__"`
 * In other case, your module is imported by another module, the interpreter will look at the filename of your module. For example, we import test.py in main program like that:
