@@ -1,6 +1,6 @@
 layout: stacked
 style: light
-theme: jekyll-theme-minima
+theme: minima
 email: cyb121415323@gmail.com
 plugins:
   - jekyll-octicons
