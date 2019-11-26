@@ -1,6 +1,7 @@
-layout: sidebar
+layout: stacked
 style: light
-
+theme: minima
+email: cyb121415323@gmail.com
 plugins:
   - jekyll-octicons
   - jekyll-github-metadata
