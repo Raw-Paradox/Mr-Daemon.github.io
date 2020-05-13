@@ -29,6 +29,7 @@ projects:
     projects:
       - MusicPlayer
       - Mr-Daemon.github.io
+      - quiz-autofill
     # - repo-name
 
 social_media:
