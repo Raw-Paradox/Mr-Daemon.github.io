@@ -1,3 +1,7 @@
+---
+title: "Zombie Process"
+---
+
 ###  Zombie Process
 
 This article we will talk about the zombie process: defination of it and how to avoid it.
