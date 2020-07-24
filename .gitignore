@@ -4,5 +4,5 @@
 _site/
 Gemfile.lock
 **/.ruby-version
-/_post/*
-!/_post/*md
+/_posts/*
+!/_posts/*md
