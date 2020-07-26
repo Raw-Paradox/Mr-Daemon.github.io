@@ -1,61 +1,75 @@
-layout: stacked
-style: light
-theme: minima
-email: cyb121415323@gmail.com
-plugins:
-  - jekyll-octicons
-  - jekyll-github-metadata
-  - jemoji
+# Site settings
+title: MY Blog
+SEOTitle: Algebra-FUN's Blog
+header-img: img/post-bg-desk.jpg
+email: g.creator.fan@gmail.com
+description: "Wait for config."
+keyword: "Wait for config"
+url: "http://algebra-fun.github.io"          # your host, for absolute URL
+baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
+github_repo: "https://github.com/algebra-fun/algebra.github.io.git" # you code repository
 
-permalink: /:year/:month/:day/:title/
+# Sidebar settings
+sidebar: false                        # whether or not using Sidebar.
+sidebar-about-description: "Under Construction"
+sidebar-avatar: /img/avatar-0.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
-defaults:
-  -
-    scope:
-      path: "" # an empty string here means all files in the project
-      type: "posts"
-    values:
-      layout: "post"
 
-projects:
-  sort_by: pushed
-  # sort_by options:
-  #   - pushed
-  #   - stars
-  limit: 9
-  exclude:
-    archived: false
-    forks: true
-    projects:
-      - MusicPlayer
-      - Mr-Daemon.github.io
-      - quiz-autofill
-    # - repo-name
 
-social_media:
-  # behance: your_username
-  # dribbble: your_username
-  # facebook: your_username
-  # hackerrank: your_username
-  # instagram: your_username
-  # keybase: your_username
-  # linkedin: your_username
-  # mastodon: your_username
-  # medium: your_username
-  stackoverflow: 10758994
-  # telegram: your_username
-  # twitter: your_username
-  # unsplash: your_username
-  # vk: your_username
-  # website: http://www.google.com
-  # youtube: your_username
+# SNS settings
+RSS: false
+# weibo_username:     qiubaiying
+# zhihu_username:     qiubaiying
+github_username:    Algebra-FUN
+# facebook_username:  baiying.qiu.7
+# jianshu_username:   e71990ada2fd
+#twitter_username:   qiubaiying
 
-#topics:
- # - name: Java
-  #  web_url: https://github.com/topics/java
-   # image_url: https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/java/java.png
 
-#  - name: Algorithm
 
-#  - name: Computer Network
- #   image_url: https://groupoliver.com/wp-content/uploads/2018/02/networking.png
+
+# Build settings
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+permalink: pretty
+paginate: 10
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+
+
+
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+gems: [jekyll-paginate]
+
+
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+
+
+# Featured Tags
+featured-tags: true                     # 是否使用首页标签
+featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
+
+
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+
+
+# Friends
+friends: [
+    {
+        title: "Mr Daemon",
+        href: "https://mr-daemon.github.io/"
+    }
+]
