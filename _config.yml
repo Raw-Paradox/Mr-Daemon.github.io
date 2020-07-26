@@ -1,13 +1,13 @@
 # Site settings
-title: MY Blog
-SEOTitle: Algebra-FUN's Blog
+title: What I have learned
+SEOTitle: Mr-Daemon's Blog
 header-img: img/post-bg-desk.jpg
-email: g.creator.fan@gmail.com
+email: cyb1214153232@gmail.com
 description: "Wait for config."
 keyword: "Wait for config"
-url: "http://algebra-fun.github.io"          # your host, for absolute URL
+url: "https://mr-daemon.github.io/"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/algebra-fun/algebra.github.io.git" # you code repository
+github_repo: "https://github.com/Mr-Daemon/Mr-Daemon.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: false                        # whether or not using Sidebar.
@@ -20,7 +20,7 @@ sidebar-avatar: /img/avatar-0.jpg      # use absolute URL, seeing it's used in b
 RSS: false
 # weibo_username:     qiubaiying
 # zhihu_username:     qiubaiying
-github_username:    Algebra-FUN
+github_username:    Mr-Daemon
 # facebook_username:  baiying.qiu.7
 # jianshu_username:   e71990ada2fd
 #twitter_username:   qiubaiying
@@ -69,7 +69,7 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "Mr Daemon",
-        href: "https://mr-daemon.github.io/"
+        title: Algebra FUN",
+        href: "https://algebra-fun.github.io/"
     }
 ]
