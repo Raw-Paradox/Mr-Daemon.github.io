@@ -1,0 +1,59 @@
+---
+layout: post
+title: "3sum-closest"    
+subtitle:   
+date: 2020-07-31
+author: "Mr Daemon"
+catalog: true
+tags:
+    - Algorithm
+---
+
+### 3sum-closest
+
+> [source link](https://leetcode.com/problems/3sum-closest)
+
+##### Description
+
+Given an array `nums` of *n* integers and an integer `target`, find three integers in `nums` such that the sum is closest to `target`. Return the sum of the three integers. You may assume that each input would have exactly one solution.
+
+##### Signature
+
+```c
+int threeSumClosest(int* nums, int numsSize, int target);
+```
+
+##### Analysis
+
+Absolutely the same as previous problem `3sum`
+
+##### Solution
+
+```c
+int threeSumClosest(int* nums, int numsSize, int target) {
+  	// hide the details
+		sort(nums);
+    int x, offset = 0x7fffffff;
+    for (int i = 0; i < numsSize - 2; i++) {
+        int j = i + 1;
+        int k = numsSize - 1;
+        while (j < k) {
+            int x_local = nums[i] + nums[j] + nums[k];
+            int offset_local = x_local - target;
+            int offset_l_abs;
+            if (offset_local > 0) {
+                k--;
+                offset_l_abs = offset_local;
+            } else if (offset_local < 0) {
+                j++;
+                offset_l_abs = -offset_local;
+            } else {
+                return target;
+            }
+            x = offset_l_abs < offset ? x_local : x;
+            offset = offset_l_abs < offset ? offset_l_abs : offset;
+        }
+    }
+    return x;
+}
+```
