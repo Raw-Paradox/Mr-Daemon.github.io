@@ -67,7 +67,9 @@
     根据分组的头部信息
 
 21. 
-22.  
+
+22. 
+
 23. - 应用层：两个端系统之间交换信息
     - 运输层：传输应用层报文
     - 网络层：在主机之间移动datagram
@@ -96,3 +98,93 @@
     Creation of a botnet requires an attacker to **find vulnerability in some application or system** (==e.g. exploiting the buffer overflow vulnerability that might exist in an application==). After finding the vulnerability, the attacker needs to scan for hosts that are vulnerable. The target is basically to compromise a series of systems by exploiting that particular vulnerability. Any system that is part of the botnet can automatically scan its environment and propagate by exploiting the vulnerability. An important property of such botnets is that the originator of the botnet can remotely control and issue commands to all the nodes in the botnet. Hence, it becomes possible for the attacker to issue a command to all the nodes, that target a single node (for example, all nodes in the botnet might be commanded by the attacker to send a TCP SYN message to the target, which might result in a TCP SYN flood attack at the target).
 
 28. 把相互通信的流量替换为自己的内容
+
+### 第二章 应用层
+
+1. - email: SMTP, POP3
+   - web browser: HTTP
+   - ftp application: FTP
+   - Bittorrent: torrent
+   - remote login: telnet
+
+2. Network architecture refers to the organization of the communication process into layers (e.g., the five-layer Internet architecture). Application architecture, on the other hand, is designed by an application developer and dictates the broad structure of the application (e.g., client-server or P2P).
+
+3. 发起会话的是client, 始终处于监听状态的是server
+
+4. 不同意, 对于单个的通信会话是存在服务器端和客户端的, 客户端接受来自服务器端的片段
+
+5. port number
+
+   The IP address of the destination host and the port number of the socket in the destination process.
+
+6. UDP, UDP可以满足尽快这一需求(只需要一个RTT的时间, 而TCP需要至少两个RTT)
+
+7. 银行转帐, 即时多人游戏
+
+8. - 传输的稳定性: TCP
+   - 传输的即时性: UDP
+   - 传输的安全性: SSL(TCP增强版)
+   - 对传输时间, 吞吐量保证: neither
+
+9. SSL应用在应用层, 适配SSL至基于UDP的版本, SSL socket作为应用层和运输层的中间件来进行对message的加密/解密
+
+10. 确保在两个socket之间打开稳定的tcp链接(❌, 应用层的SMTP也握手)
+
+    使用握手的协议在传输数据之前会相互交换control packets
+
+11. 因为这些协议需要运输层保证字节能够按发送顺序到达且无丢失
+
+12. 对特定的客户生成一个unique的cookie, 使用该cookie来索引这个客户在网页进行的操作, 保存在服务器中
+
+13. Web缓存器通过缓存用户访问资源一段时间并在另一个用户下一次访问该资源时直接从缓存器返回该资源, 来达到减少时延的目的
+
+    只能减少某些被用户不久前访问过缓存在缓存器中对象的访问时间(❌)
+
+    可以减少所有对象的访问时间, 因为缓存器的存在减少了整体线路上的流量
+
+14. 
+15. 一个FTP链接会打开至少两个TCP链接, 一个用来传输控制信息, 其他的用来传输数据, 因为有独立的链接来传输控制信息, 所以称FTP为out-of-band
+16. - Alice向自己的邮件服务器上传邮件: DNS来解析域名, HTTP来push消息到服务器上
+    - Alice的邮件服务器向Bob邮件服务器push邮件: SMTP
+    - Bob从邮件服务器获取邮件: DNS解析域名, POP3获取邮件
+
+17. 
+
+18. With download and delete, after a user retrieves its messages from a POP server, the messages are deleted. This poses a problem for the nomadic user, who may want to access the messages from many different machines (office PC, home PC, etc.). In the download and keep configuration, messages are not deleted after the user retrieves the messages. This can also be inconvenient, as each time the user retrieves the stored messages from a new machine, all of non-deleted messages will be transferred to the new machine (including very old messages).
+
+19. 可以, 邮件服务器的resource record的type是MX
+
+20. You should be able to see the sender's IP address for a user with an .edu email address. But you will not be able to see the sender's IP address if the user uses a gmail account.
+
+21. 不一定, 尽管Alice的向Bob上传速度排前四, 但这并不一定代表Bob在Alice的上传列表里排前四
+
+22. Recall that in BitTorrent, a peer picks a random peer and optimistically unchokes the peer for a short period of time. Therefore, Alice will eventually be optimistically unchoked by one of her neighbors, during which time she will receive chunks from that neighbor. 
+
+    Alice需要等待有节点随机向她上传块
+
+23. - 覆盖网络中的每个主机track其余所有主机
+
+      The overlay network in a P2P file sharing system consists of the nodes participating in the file sharing system and the logical links between the nodes.
+
+    - 不包括路由器
+
+    - 在覆盖网络中边是指存有指向主机的信息(如ip地址), 既可以被跟踪到
+
+      semi- permanent TCP connection
+
+24. - pros: 每次查找都可以直接获得答案, 花费时间最少
+
+      cons: 占用空间过多
+
+    - pros: 只需要保留相邻节点的信息, 空间花费最少
+
+      cons: 查询时间过长
+
+25. - 即时通讯中两个用户传输大文件
+    - 网络通话
+    - 网盘下载
+    - 视频会议
+
+26. TCP链接会额外建立一个链接socket, n+1
+27. 对于TCP链接, 客户端在发送数据之前必须通过握手和服务器端建立链接; 但UDP链接不会先和服务器端建立链接
+
